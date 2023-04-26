@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<title> Aplicatie numaratoare inversa </title>
+<head>
+<h1> Cronometru </h1>
+</head>
+
+<body>
+<p> Numaratoarea inversa : </p>
+<p id="demo"></p> <br>
+
+<script>
+var deadline = new Date("Mar 31, 2023 15:37:25").getTime();
+
+var x = setInterval(function() 
+ {
+
+var now = new Date().getTime();
+
+var t = deadline - now;
+
+var days = Math.floor(t / (1000 * 60 * 60 * 24));
+
+var hours = Math.floor((t%(1000 * 60 * 60 * 24))/(1000 * 60 * 60));
+
+var minutes = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
+
+var seconds = Math.floor((t % (1000 * 60)) / 1000);
+document.getElementById("demo").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+    if (t < 0) {
+        clearInterval(x);
+        document.getElementById("demo").innerHTML = "sfarsit";
+  }
+  }, 1000);
+</script>
+
+<style>
+body {background-color: powderblue;}
+h1   {color: green;}
+p    {color: blue;}
+</style>
+ 
+</body>
+</html>
+
+
