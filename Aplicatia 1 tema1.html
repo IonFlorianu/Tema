@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+<title> Aplicatia 1 </title>
+<body>
+<h1 style="color:blue;">Inmultirea si impartirea numerelor</h1>
+ <form>
+        Primul nr : <input type="text" id="nr1" />
+        Al doilea nr : <input type="text" id="nr2" /> <br>
+        <input type="button" onClick="multiplyBy(); divideBy(); " Value="Rezulat final" />
+    </form>
+ 
+    <p>Rezultatul inmultiri este : 
+        <span id="rezultatimu"></span> <br>
+Rezultatul impartiri este :
+        <span id="rezultatimp"></span> <br>
+    </p>
+ 
+    <script>
+function multiplyBy()
+        {
+          nr1 = document.getElementById("nr1").value;
+          nr2 = document.getElementById("nr2").value;   
+          document.getElementById("rezultatimu").innerHTML = nr1 * nr2;            
+        }
+
+function divideBy()
+        {
+          nr1 = document.getElementById("nr1").value;
+          nr2 = document.getElementById("nr2").value;  
+          document.getElementById("rezultatimp").innerHTML = nr1 / nr2;
+        }
+    </script>
+<style>
+body {background-color: powderblue;}
+p    {color: green;}
+</style>
+</body>
+</head>
+</html>
